@@ -1,0 +1,10 @@
+# IDEA Specific
+.idea
+ui-automation-with-cypress.iml
+
+# Node
+node_modules
+cypress/videos
+
+# MacOS
+.DS_Store
