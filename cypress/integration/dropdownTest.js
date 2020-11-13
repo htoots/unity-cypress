@@ -7,6 +7,7 @@ describe('Dropdown test', () => {
     // Test 1: Page loads and contains necessary information (dropdown)
     it('can get the correct page', () => {
       cy.get('h3').contains('Dropdown List');
+      cy.get('select[id=dropdown]').should('exist');
     });
 
     // Test 2: Dropdown holds expected information
@@ -18,7 +19,6 @@ describe('Dropdown test', () => {
       });
     });
 
-    
     // Test 3: Able to click on both dropdown options
     it('can click on the two options', () => {
       cy.get('select[id=dropdown]').select('Option 1').should('have.value', '1');
