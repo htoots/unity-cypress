@@ -25,7 +25,7 @@ describe('Redirection test', () => {
     });
     //Test 4: Check status 404
     it('should return status 404', () => {
-        //need to be revisit the previous page as it is no longer on status codes home page
+        //need to revisit the previous page as it is no longer on status codes home page
         cy.visit("/redirect");
         cy.contains('404').click().url().should('eq', 'https://the-internet.herokuapp.com/status_codes/404');
     });
