@@ -4,7 +4,7 @@
   "description": "ICS0024 Homework",
   "main": "index.js",
   "scripts": {
-    "cypress:open": "cypress open"
+    "test": "cypress open"
   },
   "repository": {
     "type": "git",
