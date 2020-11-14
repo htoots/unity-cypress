@@ -6,17 +6,12 @@ describe('Dropdown test', () => {
 
     // Test 1: Page loads and contains necessary information (dropdown)
     it('can get the correct page', () => {
-      cy.get('h3').contains('Dropdown List');
-      cy.get('select[id=dropdown]').should('exist');
+      cy.confirmPage('h3', 'Dropdown List');
     });
 
     // Test 2: Dropdown holds expected information
     it('can get the dropdown and confirm it', () => {
-      cy.get('select[id=dropdown]').within(() => {
-        cy.get('option[selected=selected]').contains('Please select an option');
-        cy.get('option[value=1]').contains('Option 1');
-        cy.get('option[value=2]').contains('Option 2');
-      });
+      cy.confirmDropdown();
     });
 
     // Test 3: Able to click on both dropdown options
