@@ -19,6 +19,9 @@ describe('Redirection test', () => {
                 expect(resp.status).to.eq(302)
             })
     });
-
+    //Test 3: Check status 200
+    it('should return status 200', () => {
+        cy.contains('200').click().url().should('eq', 'https://the-internet.herokuapp.com/status_codes/200');
+    });
 
 });
