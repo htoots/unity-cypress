@@ -23,3 +23,17 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+// Command confirms the page by getting a DOM object and comparing its value
+Cypress.Commands.add('confirmPage', (obj, value) => {
+  cy.get(obj).contains(value);
+})
+
+// Command gets the necessary dropdown and checks if it is correct
+Cypress.Commands.add('confirmDropdown', () => {
+  cy.get('select[id=dropdown]').within(() => {
+    cy.get('option[selected=selected]').contains('Please select an option');
+    cy.get('option[value=1]').contains('Option 1');
+    cy.get('option[value=2]').contains('Option 2');
+  });
+})
